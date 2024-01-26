@@ -1,13 +1,21 @@
-import React,{useState,usecallback} from 'react';
-const,callbacks = () =>{
-    const [count,setCount] = useState(0);
-    const handleClick = useCallback(() => {
-        console.log(`Button Clicked. Count: ${count}`);
-    },[count]);
-}
+import React, { useState, useCallback } from 'react';
+
+const Callback = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    console.log(`Button clicked. Count: ${count}`);
+  }, [count]);
 
   return (
-    <div>Callbacks</div>
-  
-    <button onClick={handleClick}>Click me</button>
-  )
+    <div>
+      <button onClick={handleClick}>Click</button>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+
+export default function Usestatewithcallback() {
+  return <Callback />;
+}

@@ -37,6 +37,11 @@ export default function Layout() {
                   Reducer
                     </Link>
                 </li>
+                <li>
+                    <Link className="nav-link" to="/Callbacks">
+                  callbacks
+                    </Link>
+                </li>
             </ul>
         </nav>
         <Outlet/>
